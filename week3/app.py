@@ -2,7 +2,7 @@ import sys
 from jinja2 import Template
 import pandas as pd
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use('Agg') #wsl issue
 import matplotlib.pyplot as plt
 import numpy as np
 
