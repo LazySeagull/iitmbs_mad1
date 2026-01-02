@@ -23,6 +23,10 @@ def main():
     elif len(args) == 2 and args[0] == '-c':
         write(process_c_data(df , args[1]))
         
+    else:
+        display_error()
+        sys.exit()
+        
         
 
 def process_s_data(df , student_id):
