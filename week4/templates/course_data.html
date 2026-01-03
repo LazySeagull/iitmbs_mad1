@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Data</title>
+    <style>
+        table , th , td{
+            border:2px solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>Average Marks</th>
+            <th>Maximum Marks</th>
+        </tr>
+
+        <tr>
+            <td>{{avg_marks}}</td>
+            <td>{{max_marks}}</td>
+        </tr>
+    </table>
+
+    <img src={{ url_for('static' , filename='require_plot.png')}} alt="Supposed to be a plot here :(">
+    <a href="/">Back to home</a>
+    
+</body>
+
+</html>
