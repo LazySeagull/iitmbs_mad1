@@ -86,6 +86,33 @@ def update_student(student_id):
         return redirect(url_for('home'))
     else:
         return render_template('error.html')
+    
+    
+@app.route('/student/<int:student_id>/delete' , method=['GET'])
+def delete_student(student_id):
+    if request.method == "GET":
+        student = Student.query.filter_by(student_id = student_id).first()
+        db.session.delete(student)
+        db.session.commt()
+        Enrollments.query.filter_by(estudent_id = student_id).delete()
+        db.session.commit()
+        return redirect(url_for('home'))
+    else:
+        return render_template('error.html')
+    
+    
+@app.route('/student/<int:student_id' , methods=['GET'])
+def view_student(student_id):
+    if request.method == "GET":
+        student = Student.query.filter_by(student_id = student_id).first()
+        enrollments = Enrollments.query.filter_by(student_id = student_id).all()
+        courses = []
+        for enrollment in enrollments:
+            course = Course.query.filter_by(course_id = enrollment.course_id).first()
+            courses.append(course)
+        
+        return render_template('view_student.html' , student=student , courses = courses)
+        
         
 
             
