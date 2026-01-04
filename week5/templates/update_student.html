@@ -7,10 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <form action="student/{{student.student_id}}/update" method='POST' id="update-form">
+        <form action="/student/{{student.student_id}}/update" method='POST' id="update-form">
             <div>
                 <label>Roll Number:</label>
-                <input type="text" name="roll" value="{{student.roll_number}}" disabled/>
+                <input type="text" name="roll" value="{{student.roll_number}}" readonly/>
             </div>
             <div>
                 <label>First Name:</label>
@@ -22,13 +22,13 @@
             </div>
             <div>
                 <label>Select Courses:</label>
-                <input type="checkbox" name="courses" value="course_1"/>
+                <input type="checkbox" name="courses" value="CSE01"/>
                 <laebl>MAD I</label>
-                <input type="checkbox" name="courses" value="course_2"/>
+                <input type="checkbox" name="courses" value="CSE02"/>
                 <label>DBMS</label>
-                <input type="checkbox" name="courses" value="course_3"/>
+                <input type="checkbox" name="courses" value="CSE03"/>
                 <label>PDSA</label>
-                <input type="checkbox" name="courses" value="course_4"/>
+                <input type="checkbox" name="courses" value="BST13"/>
                 <label>BDM</label>
             </div>
 
